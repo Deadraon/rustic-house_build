@@ -164,10 +164,17 @@ img{display:block;max-width:100%}
 .hamburger.open span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
 
 /* ── Mobile overlay menu ── */
-#mob-menu{position:fixed;inset:0;z-index:800;background:rgba(13,9,6,.97);backdrop-filter:blur(20px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2.5rem;opacity:0;visibility:hidden;transition:all .4s ease}
+#mob-menu{position:fixed;inset:0;z-index:800;background:rgba(13,9,6,.97);backdrop-filter:blur(20px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2.5rem;opacity:0;visibility:hidden;transition:all .4s cubic-bezier(0.4, 0, 0.2, 1)}
 #mob-menu.open{opacity:1;visibility:visible}
-#mob-menu a{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:300;color:var(--cream2);letter-spacing:.08em;transition:color var(--t)}
+#mob-menu a{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:300;color:var(--cream2);letter-spacing:.08em;opacity:0;transform:translateY(30px);transition:color var(--t), opacity 0.4s ease, transform 0.4s ease;}
 #mob-menu a:hover{color:var(--gold)}
+
+#mob-menu.open a{opacity:1;transform:translateY(0)}
+#mob-menu.open a:nth-child(1){transition-delay:0.1s}
+#mob-menu.open a:nth-child(2){transition-delay:0.15s}
+#mob-menu.open a:nth-child(3){transition-delay:0.2s}
+#mob-menu.open a:nth-child(4){transition-delay:0.25s}
+#mob-menu.open a:nth-child(5){transition-delay:0.3s}
 
 /* ── Sections ── */
 .section{padding:8rem 0}
@@ -354,16 +361,18 @@ footer{background:var(--char);border-top:1px solid var(--border2);padding:4rem 0
   .nav-inner{padding:0 1.25rem}
   .nav-logo{font-size:1.15rem;letter-spacing:.12em}
   .nav-logo small{font-size:.45rem;letter-spacing:.4em}
+  .nav-right{margin-left:auto}
 
   /* Hero fixes */
-  .hero-content{padding:6rem 1.5rem 4rem;grid-template-columns:1fr;gap:2rem}
+  .hero-content{padding:6rem 1.5rem 6rem;grid-template-columns:1fr;gap:2rem}
   .hero-h1{font-size:clamp(2.8rem,10vw,4rem);line-height:1.05}
   .hero-h1 em{display:inline}
-  .hero-btns{flex-direction:column;gap:.75rem;margin-top:2rem}
+  .hero-btns{flex-direction:column;gap:.75rem;margin-top:2rem;position:relative;z-index:10}
   .hero-btns .btn{width:100%;justify-content:center}
 
-  /* Hide scroll indicator on mobile - prevents overlap with buttons */
-  .hero-scroll{display:none}
+  /* Hero scroll indicator adjustments for mobile */
+  .hero-scroll{bottom:1.5rem;transform:scale(0.8) translateX(-60%)}
+  @keyframes bob{0%,100%{transform:translateX(-60%) translateY(0)}50%{transform:translateX(-60%) translateY(6px)}}
 }
 
 @media(max-width:480px){
