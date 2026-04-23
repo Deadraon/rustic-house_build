@@ -41,18 +41,99 @@ img{display:block;max-width:100%}
 /* ── Navbar ── */
 #nav{position:fixed;inset-x:0;top:0;z-index:900;padding:1.5rem 0;transition:all .4s ease}
 #nav.scrolled{background:rgba(13,9,6,.92);border-bottom:1px solid var(--border);backdrop-filter:blur(24px);padding:1rem 0}
-.nav-inner{max-width:1500px;margin:0 auto;padding:0 3.5rem;display:flex;align-items:center;}
-.nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:600;color:var(--gold);letter-spacing:.15em;display:flex;flex-direction:column;line-height:1;flex-shrink:0;text-decoration:none;min-width:280px}
-.nav-logo small{font-family:'Jost',sans-serif;font-size:.55rem;font-weight:400;letter-spacing:.45em;color:var(--cream3);text-transform:uppercase;margin-top:.2rem}
-.nav-spacer{flex:1;min-width:2rem}
-.nav-links{display:flex;align-items:center;gap:4rem;flex-shrink:0}
-.nav-links a{font-size:.72rem;font-weight:400;letter-spacing:.25em;text-transform:uppercase;color:var(--cream3);position:relative;transition:color var(--t);white-space:nowrap;text-decoration:none}
-.nav-links a::after{content:'';position:absolute;bottom:-.4rem;left:0;width:100%;height:1px;background:var(--gold);transform:scaleX(0);transform-origin:right;transition:transform var(--t)}
+
+.nav-inner{
+  max-width:1500px;
+  margin:0 auto;
+  padding:0 3rem;
+  display:flex;
+  align-items:center;
+  gap:0;
+}
+
+/* Logo — no fixed min-width, just natural width */
+.nav-logo{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.6rem;
+  font-weight:600;
+  color:var(--gold);
+  letter-spacing:.15em;
+  display:flex;
+  flex-direction:column;
+  line-height:1;
+  flex-shrink:0;
+  text-decoration:none;
+}
+.nav-logo small{
+  font-family:'Jost',sans-serif;
+  font-size:.55rem;
+  font-weight:400;
+  letter-spacing:.45em;
+  color:var(--cream3);
+  text-transform:uppercase;
+  margin-top:.25rem;
+}
+
+/* Flexible spacer pushes links to centre-ish */
+.nav-spacer{flex:1}
+
+/* Nav links — tighter gap */
+.nav-links{
+  display:flex;
+  align-items:center;
+  gap:2.5rem;
+  flex-shrink:0;
+}
+.nav-links a{
+  font-size:.72rem;
+  font-weight:400;
+  letter-spacing:.25em;
+  text-transform:uppercase;
+  color:var(--cream3);
+  position:relative;
+  transition:color var(--t);
+  white-space:nowrap;
+  text-decoration:none;
+}
+.nav-links a::after{
+  content:'';
+  position:absolute;
+  bottom:-.4rem;
+  left:0;
+  width:100%;
+  height:1px;
+  background:var(--gold);
+  transform:scaleX(0);
+  transform-origin:right;
+  transition:transform var(--t);
+}
 .nav-links a:hover{color:var(--gold)}
 .nav-links a:hover::after{transform:scaleX(1);transform-origin:left}
-.nav-right{flex:1;display:flex;justify-content:flex-end;align-items:center;}
-.nav-cta{font-size:.72rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;padding:.75rem 1.8rem;border:1px solid var(--gold);color:var(--gold);border-radius:2px;transition:all var(--t);white-space:nowrap;text-decoration:none;flex-shrink:0}
+
+/* Right side — Reserve Now pinned to far right */
+.nav-right{
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  flex-shrink:0;
+  margin-left:2.5rem;
+}
+.nav-cta{
+  font-size:.72rem;
+  font-weight:500;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  padding:.75rem 1.8rem;
+  border:1px solid var(--gold);
+  color:var(--gold);
+  border-radius:2px;
+  transition:all var(--t);
+  white-space:nowrap;
+  text-decoration:none;
+  flex-shrink:0;
+}
 .nav-cta:hover{background:var(--gold);color:var(--char)}
+
 .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:.5rem;background:none;border:none}
 .hamburger span{display:block;width:22px;height:1px;background:var(--cream);transition:all var(--t)}
 .hamburger.open span:nth-child(1){transform:translateY(6px) rotate(45deg)}
