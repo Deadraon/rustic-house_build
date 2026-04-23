@@ -38,26 +38,41 @@ img{display:block;max-width:100%}
 /* ── Progress Bar ── */
 #prog{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--gold),var(--ember),var(--gold));z-index:9998;width:0;transition:width 60ms linear}
 
-/* ── Navbar ── */
-#nav{position:fixed;inset-x:0;top:0;z-index:900;padding:1.5rem 0;transition:all .4s ease}
-#nav.scrolled{background:rgba(13,9,6,.92);border-bottom:1px solid var(--border);backdrop-filter:blur(24px);padding:1rem 0}
+/* ════════════════════════════════
+   NAVBAR — full viewport width
+   Logo | ← flex:1 centred links → | Reserve Now
+   ════════════════════════════════ */
+#nav{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  z-index:900;
+  padding:1.25rem 0;
+  transition:background .4s ease, padding .4s ease, border-color .4s ease;
+}
+#nav.scrolled{
+  background:rgba(13,9,6,.94);
+  border-bottom:1px solid var(--border);
+  backdrop-filter:blur(24px);
+  -webkit-backdrop-filter:blur(24px);
+  padding:.85rem 0;
+}
 
 .nav-inner{
-  max-width:1500px;
-  margin:0 auto;
+  /* spans full viewport, generous edge padding */
   padding:0 3rem;
   display:flex;
   align-items:center;
-  gap:0;
 }
 
-/* Logo — no fixed min-width, just natural width */
+/* ── Logo ── */
 .nav-logo{
   font-family:'Cormorant Garamond',serif;
-  font-size:1.6rem;
+  font-size:1.45rem;
   font-weight:600;
   color:var(--gold);
-  letter-spacing:.15em;
+  letter-spacing:.18em;
   display:flex;
   flex-direction:column;
   line-height:1;
@@ -66,28 +81,29 @@ img{display:block;max-width:100%}
 }
 .nav-logo small{
   font-family:'Jost',sans-serif;
-  font-size:.55rem;
+  font-size:.5rem;
   font-weight:400;
-  letter-spacing:.45em;
+  letter-spacing:.55em;
   color:var(--cream3);
   text-transform:uppercase;
-  margin-top:.25rem;
+  margin-top:.3rem;
 }
 
-/* Flexible spacer pushes links to centre-ish */
-.nav-spacer{flex:1}
+/* ── Hidden spacer no longer needed ── */
+.nav-spacer{ display:none; }
 
-/* Nav links — tighter gap */
+/* ── Nav links: take all remaining space, centre themselves ── */
 .nav-links{
+  flex:1;
   display:flex;
   align-items:center;
-  gap:2.5rem;
-  flex-shrink:0;
+  justify-content:center;
+  gap:3rem;
 }
 .nav-links a{
-  font-size:.72rem;
+  font-size:.68rem;
   font-weight:400;
-  letter-spacing:.25em;
+  letter-spacing:.28em;
   text-transform:uppercase;
   color:var(--cream3);
   position:relative;
@@ -107,38 +123,47 @@ img{display:block;max-width:100%}
   transform-origin:right;
   transition:transform var(--t);
 }
-.nav-links a:hover{color:var(--gold)}
-.nav-links a:hover::after{transform:scaleX(1);transform-origin:left}
+.nav-links a:hover{ color:var(--gold); }
+.nav-links a:hover::after{ transform:scaleX(1); transform-origin:left; }
 
-/* Right side — Reserve Now pinned to far right */
+/* ── Right side: Reserve Now hugs the right edge ── */
 .nav-right{
+  flex-shrink:0;
   display:flex;
   align-items:center;
-  justify-content:flex-end;
-  flex-shrink:0;
-  margin-left:2.5rem;
 }
 .nav-cta{
-  font-size:.72rem;
+  font-size:.67rem;
   font-weight:500;
-  letter-spacing:.2em;
+  letter-spacing:.22em;
   text-transform:uppercase;
-  padding:.75rem 1.8rem;
+  padding:.72rem 1.65rem;
   border:1px solid var(--gold);
   color:var(--gold);
   border-radius:2px;
   transition:all var(--t);
   white-space:nowrap;
   text-decoration:none;
-  flex-shrink:0;
 }
-.nav-cta:hover{background:var(--gold);color:var(--char)}
+.nav-cta:hover{ background:var(--gold); color:var(--char); }
 
-.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:.5rem;background:none;border:none}
+/* ── Hamburger (mobile only) ── */
+.hamburger{
+  display:none;
+  flex-direction:column;
+  gap:5px;
+  cursor:pointer;
+  padding:.5rem;
+  background:none;
+  border:none;
+  margin-left:auto;
+}
 .hamburger span{display:block;width:22px;height:1px;background:var(--cream);transition:all var(--t)}
 .hamburger.open span:nth-child(1){transform:translateY(6px) rotate(45deg)}
 .hamburger.open span:nth-child(2){opacity:0}
 .hamburger.open span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+
+/* ── Mobile overlay menu ── */
 #mob-menu{position:fixed;inset:0;z-index:800;background:rgba(13,9,6,.97);backdrop-filter:blur(20px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2.5rem;opacity:0;visibility:hidden;transition:all .4s ease}
 #mob-menu.open{opacity:1;visibility:visible}
 #mob-menu a{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:300;color:var(--cream2);letter-spacing:.08em;transition:color var(--t)}
