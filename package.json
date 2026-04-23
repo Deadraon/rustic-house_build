@@ -1,0 +1,19 @@
+{
+  "name": "rustic-house-roorkee",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Premium responsive restaurant website for Rustic House - Cafe, Lounge and Bar in Roorkee.",
+  "scripts": {
+    "dev": "npx serve .",
+    "start": "npx serve ."
+  },
+  "keywords": [
+    "restaurant",
+    "cafe",
+    "bar",
+    "roorkee",
+    "tailwind"
+  ],
+  "author": "Rustic House",
+  "license": "UNLICENSED"
+}
