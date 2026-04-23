@@ -4,7 +4,11 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
   <meta name="description" content="Rustic House — Cafe, Lounge & Bar in Roorkee. An intimate dining experience with warm ambience, artisan food and handcrafted drinks."/>
+  <meta name="theme-color" content="#0d0906"/>
   <title>Rustic House | Cafe, Lounge & Bar — Roorkee</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="./styles.css"/>
 </head>
 <body>
@@ -34,7 +38,7 @@
       <a href="#contact">Contact</a>
     </nav>
     <div class="nav-right">
-      <a href="#contact" class="nav-cta">Reserve Now</a>
+      <a href="https://wa.me/919876543210?text=Hi%2C%20I%20would%20like%20to%20reserve%20a%20table%20at%20Rustic%20House." target="_blank" rel="noreferrer" class="nav-cta">Reserve Now</a>
       <button class="hamburger" id="ham" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
@@ -44,11 +48,13 @@
 
 <!-- Mobile menu -->
 <div id="mob-menu">
+  <button class="mob-close" id="mob-close" aria-label="Close menu">✕</button>
   <a href="#hero">Home</a>
   <a href="#about">About</a>
   <a href="#menu">Menu</a>
   <a href="#gallery">Gallery</a>
   <a href="#contact">Contact</a>
+  <a href="https://wa.me/919876543210?text=Hi%2C%20I%20would%20like%20to%20reserve%20a%20table%20at%20Rustic%20House." target="_blank" rel="noreferrer" class="mob-wa-btn">📲 Reserve via WhatsApp</a>
 </div>
 
 <!-- ═══ HERO ═══ -->
@@ -61,13 +67,17 @@
       <div class="hero-badge">Roorkee's finest</div>
       <h1 class="hero-h1">
         Where Every<br>
-        <em>Meal Becomes</em><br>
-        a Memory
+        <em>Meal Feels</em><br>
+        Like an Experience
       </h1>
+      <p class="hero-sub">Cafe • Lounge • Bar | Roorkee</p>
       <p class="hero-desc">An intimate cafe, lounge and bar in the heart of Roorkee — crafted for slow evenings, bold flavours and conversations that linger.</p>
       <div class="hero-btns">
-        <a href="#menu" class="btn btn-gold">Explore Menu</a>
-        <a href="#contact" class="btn btn-outline">Reserve a Table</a>
+        <a href="https://wa.me/919876543210?text=Hi%2C%20I%20would%20like%20to%20reserve%20a%20table%20at%20Rustic%20House." target="_blank" rel="noreferrer" class="btn btn-gold">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.557 4.126 1.533 5.858L.057 23.486a.5.5 0 0 0 .492.601l5.801-1.524A11.953 11.953 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.9 0-3.68-.527-5.194-1.441l-.361-.217-3.742.982.999-3.645-.238-.374A9.945 9.945 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+          Reserve Table
+        </a>
+        <a href="#menu" class="btn btn-outline">View Menu</a>
       </div>
     </div>
     <aside class="hero-card" data-r data-d="2">
@@ -87,10 +97,6 @@
         </div>
       </div>
     </aside>
-  </div>
-  <div class="hero-scroll">
-    <span>Scroll</span>
-    <div class="scroll-line"></div>
   </div>
 </section>
 
@@ -161,12 +167,12 @@
         <p class="eyebrow">Gallery</p>
         <h2 class="display" style="font-size:clamp(2rem,4vw,3.5rem)">Inside <em>Rustic House</em></h2>
       </div>
-      <a href="#contact" class="gal-link">Plan your visit →</a>
+      <a href="https://wa.me/919876543210?text=Hi%2C%20I%20would%20like%20to%20plan%20a%20visit%20to%20Rustic%20House." target="_blank" rel="noreferrer" class="gal-link">Plan your visit →</a>
     </div>
     <div class="gal-grid" data-r data-d="1">
       <figure class="gcard g1">
         <img src="./public/images/rustic-interior-wide.jpg" alt="Warm cafe interior"/>
-        <figcaption>Lounge Interiors</figcaption>
+        <figcaption>Cozy Interiors</figcaption>
       </figure>
       <figure class="gcard g2">
         <img src="./public/images/rustic-exterior-wide.jpg" alt="Rustic House facade"/>
@@ -174,11 +180,11 @@
       </figure>
       <figure class="gcard g3">
         <img src="./public/images/rustic-interior.jpg" alt="Bar seating"/>
-        <figcaption>Bar Side</figcaption>
+        <figcaption>Signature Drinks</figcaption>
       </figure>
       <figure class="gcard g4">
         <img src="./public/images/rustic-exterior.jpg" alt="Entrance"/>
-        <figcaption>Entrance</figcaption>
+        <figcaption>Grand Entrance</figcaption>
       </figure>
     </div>
   </div>
@@ -193,24 +199,32 @@
     </div>
     <div class="why-grid">
       <div class="wcard" data-r>
-        <span class="wicon">🕯</span>
-        <h3>Intimate Ambience</h3>
+        <div class="wicon-wrap">
+          <svg class="wicon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1"/><path d="M12 11V2"/><path d="M4.2 15.4A7 7 0 0 0 5 18c0 2.2 3.1 4 7 4s7-1.8 7-4a7 7 0 0 0 .8-2.6"/></svg>
+        </div>
+        <h3>Cozy Ambience</h3>
         <p>Warm wood, gentle light and seating designed to make every guest feel at home.</p>
       </div>
       <div class="wcard" data-r data-d="1">
-        <span class="wicon">🍽</span>
-        <h3>Artisan Cuisine</h3>
+        <div class="wicon-wrap">
+          <svg class="wicon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 2h2l2 7H6M3 2H1M3 2l2 7m0 0-1.5 6H18l-1.5-6M5 9h14"/><circle cx="9" cy="20" r="1"/><circle cx="15" cy="20" r="1"/></svg>
+        </div>
+        <h3>Premium Food</h3>
         <p>Every dish is thoughtfully composed — from smoky starters to rich, hearty mains.</p>
       </div>
       <div class="wcard" data-r data-d="2">
-        <span class="wicon">🥂</span>
-        <h3>Lounge Mood</h3>
-        <p>Curated drinks, great music and a vibe that moves from relaxed to celebratory.</p>
+        <div class="wicon-wrap">
+          <svg class="wicon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h3>Perfect Hangout</h3>
+        <p>Curated for dates, friend outings and family evenings — every occasion, perfectly set.</p>
       </div>
       <div class="wcard" data-r data-d="3">
-        <span class="wicon">⭐</span>
-        <h3>Roorkee's Favourite</h3>
-        <p>Consistently rated 4.8 — the go-to spot for dates, gatherings and celebrations.</p>
+        <div class="wicon-wrap">
+          <svg class="wicon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+        </div>
+        <h3>Great Music & Drinks</h3>
+        <p>Handcrafted mocktails, curated playlists and a vibe that moves from relaxed to celebratory.</p>
       </div>
     </div>
   </div>
@@ -226,22 +240,34 @@
     </div>
     <div class="rev-grid">
       <div class="rcard" data-r>
-        <div class="rstars">★★★★★</div>
+        <div class="rstars">
+          <span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span>
+          <span class="rrating">5.0</span>
+        </div>
         <blockquote>"Loved the wooden interiors and warm lighting. Perfect place for evening coffee — we stayed for three hours without noticing."</blockquote>
         <cite>Ritika S. <small>Local Guest</small></cite>
       </div>
       <div class="rcard" data-r data-d="1">
-        <div class="rstars">★★★★★</div>
+        <div class="rstars">
+          <span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span>
+          <span class="rrating">5.0</span>
+        </div>
         <blockquote>"Their starters are genuinely exceptional and the lounge has a relaxed, premium feel that's hard to find in Roorkee."</blockquote>
         <cite>Arjun M. <small>Weekend Visitor</small></cite>
       </div>
       <div class="rcard" data-r data-d="2">
-        <div class="rstars">★★★★☆</div>
+        <div class="rstars">
+          <span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star">★</span>
+          <span class="rrating">4.0</span>
+        </div>
         <blockquote>"A rare spot that works equally well for a family dinner and a friends night out. The food never disappoints."</blockquote>
         <cite>Neha K. <small>Food Lover</small></cite>
       </div>
       <div class="rcard" data-r data-d="3">
-        <div class="rstars">★★★★★</div>
+        <div class="rstars">
+          <span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span>
+          <span class="rrating">5.0</span>
+        </div>
         <blockquote>"Great music, warm staff and a cozy bar vibe. We've already been back twice since our first visit."</blockquote>
         <cite>Kunal R. <small>Regular Guest</small></cite>
       </div>
@@ -272,7 +298,10 @@
         </div>
         <div class="cbtns">
           <a href="tel:+919876543210" class="btn btn-gold">Call Now</a>
-          <a href="https://wa.me/919876543210" target="_blank" rel="noreferrer" class="btn btn-outline">WhatsApp</a>
+          <a href="https://wa.me/919876543210?text=Hi%2C%20I%20would%20like%20to%20reserve%20a%20table%20at%20Rustic%20House." target="_blank" rel="noreferrer" class="btn btn-outline btn-wa">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.557 4.126 1.533 5.858L.057 23.486a.5.5 0 0 0 .492.601l5.801-1.524A11.953 11.953 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.9 0-3.68-.527-5.194-1.441l-.361-.217-3.742.982.999-3.645-.238-.374A9.945 9.945 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+            WhatsApp
+          </a>
         </div>
       </div>
       <div class="map-wrap" data-r data-d="1">
@@ -323,7 +352,14 @@
   </div>
 </footer>
 
+<!-- Back to Top -->
 <button id="btt" aria-label="Back to top">↑</button>
+
+<!-- Floating WhatsApp Button -->
+<a href="https://wa.me/919876543210?text=Hi%2C%20I%20would%20like%20to%20reserve%20a%20table%20at%20Rustic%20House." target="_blank" rel="noreferrer" id="wa-float" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" width="26" height="26"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.557 4.126 1.533 5.858L.057 23.486a.5.5 0 0 0 .492.601l5.801-1.524A11.953 11.953 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.9 0-3.68-.527-5.194-1.441l-.361-.217-3.742.982.999-3.645-.238-.374A9.945 9.945 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+  <span class="wa-tooltip">Reserve a Table</span>
+</a>
 
 <script src="./script.js"></script>
 </body>
