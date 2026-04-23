@@ -164,71 +164,107 @@ img{display:block;max-width:100%}
 .hamburger.open span:nth-child(2){opacity:0;}
 .hamburger.open span:nth-child(3){transform:translateY(-8px) rotate(-45deg);background:var(--gold);}
 
-/* ── Mobile overlay menu ── */
-#mob-menu{
+/* ── Mobile drawer menu ── */
+#mob-overlay{
+  display:none;
   position:fixed;
   inset:0;
-  z-index:800;
-  background:rgba(10, 10, 10, 0.98);
-  backdrop-filter:blur(25px);
-  -webkit-backdrop-filter:blur(25px);
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  gap:2.5rem;
+  z-index:799;
+  background:rgba(0,0,0,0.65);
   opacity:0;
   visibility:hidden;
-  transition:all .5s cubic-bezier(0.4, 0, 0.2, 1);
-  transform: translateX(100%);
+  transition:opacity .45s ease, visibility .45s ease;
 }
-#mob-menu.open{
+#mob-overlay.open{opacity:1;visibility:visible;}
+
+#mob-menu{
+  position:fixed;
+  top:0;
+  right:0;
+  bottom:0;
+  left:auto;
+  width:min(70vw, 320px);
+  z-index:800;
+  background:rgba(14,12,10,0.97);
+  backdrop-filter:blur(24px);
+  -webkit-backdrop-filter:blur(24px);
+  border-left:1px solid var(--border);
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  justify-content:center;
+  gap:0;
+  padding:5rem 2.5rem 3rem;
+  visibility:hidden;
   opacity:1;
-  visibility:visible;
-  transform: translateX(0);
+  transform:translateX(100%);
+  transition:transform .45s cubic-bezier(.4,0,.2,1), visibility .45s ease;
 }
+#mob-menu.open{visibility:visible;transform:translateX(0);}
+
 .mob-close{
   position:absolute;
-  top:2rem;
-  right:2rem;
-  background:none;
-  border:none;
-  color:var(--cream);
-  font-size:2rem;
+  top:1.5rem;
+  right:1.5rem;
+  background:rgba(255,255,255,0.06);
+  border:1px solid var(--border2);
+  color:var(--cream2);
+  font-size:1.2rem;
+  width:2.5rem;
+  height:2.5rem;
+  border-radius:50%;
   cursor:pointer;
-  transition:color var(--t);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition:all var(--t);
 }
-.mob-close:hover{ color:var(--gold); }
+.mob-close:hover{background:var(--gold-dim);border-color:var(--gold);color:var(--gold);}
+
 #mob-menu a{
   font-family:var(--font-head);
-  font-size:2.5rem;
+  font-size:1.55rem;
   font-weight:400;
   color:var(--cream2);
-  letter-spacing:.05em;
+  letter-spacing:.03em;
+  width:100%;
+  padding:.9rem 0;
+  border-bottom:1px solid rgba(255,255,255,0.07);
   opacity:0;
-  transform:translateY(30px);
-  transition:color var(--t), opacity 0.4s ease, transform 0.4s ease;
+  transform:translateX(25px);
+  transition:color var(--t), opacity .4s ease, transform .4s ease;
 }
-#mob-menu a:hover{color:var(--gold)}
-#mob-menu .mob-wa-btn {
-  font-family:var(--font-body);
-  font-size: 1.1rem;
-  margin-top: 2rem;
-  padding: 1rem 2rem;
-  background: var(--gold);
-  color: var(--char);
-  border-radius: 30px;
-  font-weight: 500;
-}
-#mob-menu .mob-wa-btn:hover { background: var(--gold-light); color: var(--char); }
+#mob-menu a:last-child{border-bottom:none;}
+#mob-menu a:hover{color:var(--gold);padding-left:.5rem;}
 
-#mob-menu.open a{opacity:1;transform:translateY(0)}
-#mob-menu.open a:nth-child(2){transition-delay:0.1s}
-#mob-menu.open a:nth-child(3){transition-delay:0.15s}
-#mob-menu.open a:nth-child(4){transition-delay:0.2s}
-#mob-menu.open a:nth-child(5){transition-delay:0.25s}
-#mob-menu.open a:nth-child(6){transition-delay:0.3s}
-#mob-menu.open a:nth-child(7){transition-delay:0.35s}
+#mob-menu .mob-wa-btn{
+  font-family:var(--font-body);
+  font-size:.85rem;
+  font-weight:500;
+  margin-top:2rem;
+  padding:.75rem 1.6rem;
+  background:transparent;
+  color:var(--gold);
+  border:1px solid var(--gold);
+  border-radius:30px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  display:inline-flex;
+  align-items:center;
+  gap:.5rem;
+  transition:all var(--t);
+  opacity:0;
+  transform:translateX(25px);
+}
+#mob-menu .mob-wa-btn:hover{background:var(--gold);color:var(--char);box-shadow:0 0 15px var(--gold-glow);}
+
+#mob-menu.open a{opacity:1;transform:translateX(0);}
+#mob-menu.open a:nth-child(2){transition-delay:.08s}
+#mob-menu.open a:nth-child(3){transition-delay:.13s}
+#mob-menu.open a:nth-child(4){transition-delay:.18s}
+#mob-menu.open a:nth-child(5){transition-delay:.23s}
+#mob-menu.open a:nth-child(6){transition-delay:.28s}
+#mob-menu.open .mob-wa-btn{opacity:1;transform:translateX(0);transition-delay:.35s;}
 
 /* ── Sections ── */
 .section{padding:7rem 0}
@@ -394,10 +430,16 @@ footer{background:var(--char);border-top:1px solid var(--border2);padding:5rem 0
 #btt.on{opacity:1;visibility:visible;transform:translateY(0)}
 #btt:hover{background:var(--gold);color:var(--char);transform:translateY(-5px);box-shadow:var(--shadow-hover);}
 
+/* ── Floating WhatsApp (hidden until hero leaves viewport) ── */
+@keyframes wa-pulse{
+  0%,100%{box-shadow:0 4px 15px rgba(37,211,102,.45), 0 0 0 0 rgba(37,211,102,.25);}
+  50%{box-shadow:0 4px 20px rgba(37,211,102,.55), 0 0 0 10px rgba(37,211,102,0);}
+}
 #wa-float {
   position:fixed;
   bottom:2rem;
-  left:2rem;
+  right:2rem;
+  left:auto;
   z-index:90;
   width:3.5rem;
   height:3.5rem;
@@ -407,12 +449,21 @@ footer{background:var(--char);border-top:1px solid var(--border2);padding:5rem 0
   display:flex;
   align-items:center;
   justify-content:center;
-  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
-  transition:all var(--t);
+  opacity:0;
+  visibility:hidden;
+  transform:translateY(20px) scale(0.85);
+  transition:opacity .4s ease, visibility .4s ease, transform .4s cubic-bezier(.34,1.56,.64,1);
 }
-#wa-float:hover {
-  transform:scale(1.1);
-  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+#wa-float.visible{
+  opacity:1;
+  visibility:visible;
+  transform:translateY(0) scale(1);
+  animation:wa-pulse 3s ease-in-out 1s infinite;
+}
+#wa-float:hover{
+  transform:translateY(-4px) scale(1.08);
+  box-shadow:0 8px 25px rgba(37,211,102,.6);
+  animation:none;
 }
 .wa-tooltip {
   position: absolute;
@@ -471,8 +522,9 @@ footer{background:var(--char);border-top:1px solid var(--border2);padding:5rem 0
   
   #mgrid{grid-template-columns:1fr}
   
-  #btt { bottom: 1.5rem; right: 1.5rem; width: 2.5rem; height: 2.5rem; font-size: 1rem;}
-  #wa-float { bottom: 1.5rem; left: 1.5rem; width: 3rem; height: 3rem; }
+  #mob-overlay{display:block;}
+  #btt { bottom: 5rem; right: 1.5rem; width: 2.5rem; height: 2.5rem; font-size: 1rem;}
+  #wa-float { bottom: 1.5rem; right: 1.5rem; width: 3.2rem; height: 3.2rem; }
   .wa-tooltip { display: none; }
 }
 

@@ -30,7 +30,9 @@ const items = {
 const nav = document.querySelector("#nav");
 const ham = document.querySelector("#ham");
 const mob = document.querySelector("#mob-menu");
+const mobOverlay = document.querySelector("#mob-overlay");
 const mobClose = document.querySelector("#mob-close");
+const waFloat = document.querySelector("#wa-float");
 const mgrid = document.querySelector("#mgrid");
 const prog = document.querySelector("#prog");
 const btt = document.querySelector("#btt");
@@ -44,6 +46,14 @@ window.addEventListener("load", () => {
     heroEl.classList.add("ready"); 
   }, 800);
 });
+
+/* ── Floating WA: show only when hero is NOT visible ── */
+const heroObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (waFloat) waFloat.classList.toggle("visible", !e.isIntersecting);
+  });
+}, { threshold: 0.2 });
+heroObserver.observe(heroEl);
 
 /* ── Scroll Interactions ── */
 window.addEventListener("scroll", () => {
@@ -67,19 +77,20 @@ const toggleMenu = (forceClose = false) => {
   if (forceClose) {
     ham.classList.remove("open");
     mob.classList.remove("open");
+    if (mobOverlay) mobOverlay.classList.remove("open");
     document.body.style.overflow = "";
     return;
   }
   
   const open = ham.classList.toggle("open");
   mob.classList.toggle("open", open);
+  if (mobOverlay) mobOverlay.classList.toggle("open", open);
   document.body.style.overflow = open ? "hidden" : "";
 };
 
 ham.addEventListener("click", () => toggleMenu());
-if (mobClose) {
-  mobClose.addEventListener("click", () => toggleMenu(true));
-}
+if (mobClose) mobClose.addEventListener("click", () => toggleMenu(true));
+if (mobOverlay) mobOverlay.addEventListener("click", () => toggleMenu(true));
 
 mob.querySelectorAll("a").forEach(a => {
   a.addEventListener("click", () => toggleMenu(true));
