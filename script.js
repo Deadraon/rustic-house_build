@@ -78,14 +78,13 @@ const toggleMenu = (forceClose = false) => {
     ham.classList.remove("open");
     mob.classList.remove("open");
     if (mobOverlay) mobOverlay.classList.remove("open");
-    document.body.style.overflow = "";
+    document.body.classList.remove("menu-open");
     return;
   }
-  
   const open = ham.classList.toggle("open");
   mob.classList.toggle("open", open);
   if (mobOverlay) mobOverlay.classList.toggle("open", open);
-  document.body.style.overflow = open ? "hidden" : "";
+  document.body.classList.toggle("menu-open", open);
 };
 
 ham.addEventListener("click", () => toggleMenu());

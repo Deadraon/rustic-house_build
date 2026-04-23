@@ -159,23 +159,27 @@ img{display:block;max-width:100%}
   border:none;
   margin-left:1rem;
 }
+/* Hamburger spans — suppress X animation (overlay covers navbar when menu is open) */
 .hamburger span{display:block;width:28px;height:2px;background:var(--cream);transition:all var(--t);border-radius:2px;}
-.hamburger.open span:nth-child(1){transform:translateY(8px) rotate(45deg);background:var(--gold);}
-.hamburger.open span:nth-child(2){opacity:0;}
-.hamburger.open span:nth-child(3){transform:translateY(-8px) rotate(-45deg);background:var(--gold);}
 
 /* ── Mobile drawer menu ── */
 #mob-overlay{
   display:none;
   position:fixed;
   inset:0;
-  z-index:799;
-  background:rgba(0,0,0,0.65);
+  z-index:901;
+  background:rgba(0,0,0,0.7);
+  backdrop-filter:blur(3px);
+  -webkit-backdrop-filter:blur(3px);
   opacity:0;
   visibility:hidden;
   transition:opacity .45s ease, visibility .45s ease;
+  cursor:pointer;
 }
 #mob-overlay.open{opacity:1;visibility:visible;}
+
+/* Scroll-lock when menu is open */
+body.menu-open{overflow:hidden;height:100vh;touch-action:none;}
 
 #mob-menu{
   position:fixed;
@@ -184,11 +188,12 @@ img{display:block;max-width:100%}
   bottom:0;
   left:auto;
   width:min(70vw, 320px);
-  z-index:800;
-  background:rgba(14,12,10,0.97);
+  z-index:902;
+  background:rgba(14,12,10,0.98);
   backdrop-filter:blur(24px);
   -webkit-backdrop-filter:blur(24px);
   border-left:1px solid var(--border);
+  box-shadow:-20px 0 60px rgba(0,0,0,0.7);
   display:flex;
   flex-direction:column;
   align-items:flex-start;
@@ -202,24 +207,27 @@ img{display:block;max-width:100%}
 }
 #mob-menu.open{visibility:visible;transform:translateX(0);}
 
+/* Single close button — top-right inside panel */
 .mob-close{
   position:absolute;
   top:1.5rem;
   right:1.5rem;
   background:rgba(255,255,255,0.06);
-  border:1px solid var(--border2);
-  color:var(--cream2);
-  font-size:1.2rem;
-  width:2.5rem;
-  height:2.5rem;
+  border:1px solid var(--border);
+  color:var(--gold);
+  font-size:1rem;
+  width:2.8rem;
+  height:2.8rem;
   border-radius:50%;
   cursor:pointer;
   display:flex;
   align-items:center;
   justify-content:center;
   transition:all var(--t);
+  font-weight:400;
+  line-height:1;
 }
-.mob-close:hover{background:var(--gold-dim);border-color:var(--gold);color:var(--gold);}
+.mob-close:hover{background:var(--gold);border-color:var(--gold);color:var(--char);}
 
 #mob-menu a{
   font-family:var(--font-head);
