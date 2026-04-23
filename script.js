@@ -1,227 +1,112 @@
-const menuItems = {
+/* ── Menu Data ── */
+const items = {
   starters: [
-    {
-      name: "Smoky Tandoori Paneer Tikka",
-      description: "Charred cottage cheese, bell peppers, onion petals and mint chutney.",
-      price: "₹279",
-    },
-    {
-      name: "Rustic Loaded Nachos",
-      description: "Crisp tortilla chips, cheese sauce, salsa, jalapenos and creamy dip.",
-      price: "₹249",
-    },
-    {
-      name: "Crispy Chilli Mushroom",
-      description: "Golden fried mushrooms tossed with garlic, chilli and spring onions.",
-      price: "₹259",
-    },
-    {
-      name: "Peri Peri Chicken Wings",
-      description: "Juicy wings glazed with house peri peri spice and served with ranch.",
-      price: "₹349",
-    },
-    {
-      name: "Cheese Corn Cigar Rolls",
-      description: "Crisp rolls filled with sweet corn, cheese and herbs.",
-      price: "₹239",
-    },
-    {
-      name: "Classic Fries Basket",
-      description: "Crispy fries with smoky seasoning and two cafe dips.",
-      price: "₹179",
-    },
+    { name: "Smoky Tandoori Paneer Tikka", desc: "Charred cottage cheese, bell peppers, onion petals and mint chutney.", price: "₹279" },
+    { name: "Rustic Loaded Nachos", desc: "Crisp tortilla chips, cheese sauce, salsa, jalapenos and creamy dip.", price: "₹249" },
+    { name: "Crispy Chilli Mushroom", desc: "Golden fried mushrooms tossed with garlic, chilli and spring onions.", price: "₹259" },
+    { name: "Peri Peri Chicken Wings", desc: "Juicy wings glazed with house peri peri spice and served with ranch.", price: "₹349" },
+    { name: "Cheese Corn Cigar Rolls", desc: "Crisp rolls filled with sweet corn, cheese and herbs.", price: "₹239" },
+    { name: "Classic Fries Basket", desc: "Crispy fries with smoky seasoning and two cafe dips.", price: "₹179" },
   ],
   main: [
-    {
-      name: "Woodfire Style Margherita Pizza",
-      description: "Fresh basil, mozzarella, tomato sauce and a blistered thin crust.",
-      price: "₹329",
-    },
-    {
-      name: "Butter Chicken Bowl",
-      description: "Creamy butter chicken with herbed rice, salad and laccha onions.",
-      price: "₹399",
-    },
-    {
-      name: "Creamy Alfredo Pasta",
-      description: "Penne in parmesan cream sauce with vegetables and garlic toast.",
-      price: "₹319",
-    },
-    {
-      name: "Paneer Lababdar Combo",
-      description: "Rich paneer curry served with butter naan, rice and pickle.",
-      price: "₹349",
-    },
-    {
-      name: "Rustic House Club Sandwich",
-      description: "Triple layered sandwich with grilled filling, fries and slaw.",
-      price: "₹289",
-    },
-    {
-      name: "Veg Thai Curry Meal",
-      description: "Fragrant curry, seasonal vegetables and steamed jasmine rice.",
-      price: "₹369",
-    },
+    { name: "Woodfire Margherita Pizza", desc: "Fresh basil, mozzarella, tomato sauce and a blistered thin crust.", price: "₹329" },
+    { name: "Butter Chicken Bowl", desc: "Creamy butter chicken with herbed rice, salad and laccha onions.", price: "₹399" },
+    { name: "Creamy Alfredo Pasta", desc: "Penne in parmesan cream sauce with vegetables and garlic toast.", price: "₹319" },
+    { name: "Paneer Lababdar Combo", desc: "Rich paneer curry served with butter naan, rice and pickle.", price: "₹349" },
+    { name: "Rustic House Club Sandwich", desc: "Triple layered sandwich with grilled filling, fries and slaw.", price: "₹289" },
+    { name: "Veg Thai Curry Meal", desc: "Fragrant curry, seasonal vegetables and steamed jasmine rice.", price: "₹369" },
   ],
   beverages: [
-    {
-      name: "Caramel Cold Coffee",
-      description: "Cafe-style cold coffee finished with caramel drizzle and cream.",
-      price: "₹189",
-    },
-    {
-      name: "Blueberry Basil Cooler",
-      description: "A refreshing berry cooler with basil, lime and crushed ice.",
-      price: "₹199",
-    },
-    {
-      name: "Classic Mojito",
-      description: "Mint, lime, soda and a crisp lounge-style finish.",
-      price: "₹169",
-    },
-    {
-      name: "Hazelnut Cappuccino",
-      description: "Espresso, steamed milk and roasted hazelnut aroma.",
-      price: "₹159",
-    },
-    {
-      name: "Virgin Sangria Pitcher",
-      description: "Fruit-forward sangria mocktail built for sharing.",
-      price: "₹349",
-    },
-    {
-      name: "Masala Lemonade",
-      description: "Tangy lemonade with Indian masala, mint and black salt.",
-      price: "₹139",
-    },
+    { name: "Caramel Cold Coffee", desc: "Cafe-style cold coffee finished with caramel drizzle and cream.", price: "₹189" },
+    { name: "Blueberry Basil Cooler", desc: "A refreshing berry cooler with basil, lime and crushed ice.", price: "₹199" },
+    { name: "Classic Mojito", desc: "Mint, lime, soda and a crisp lounge-style finish.", price: "₹169" },
+    { name: "Hazelnut Cappuccino", desc: "Espresso, steamed milk and roasted hazelnut aroma.", price: "₹159" },
+    { name: "Virgin Sangria Pitcher", desc: "Fruit-forward sangria mocktail built for sharing.", price: "₹349" },
+    { name: "Masala Lemonade", desc: "Tangy lemonade with Indian masala, mint and black salt.", price: "₹139" },
   ],
 };
 
-/* ── DOM references ────────────────────────────────────── */
-const navbar = document.querySelector("#navbar");
-const menuToggle = document.querySelector("#menu-toggle");
-const mobileMenu = document.querySelector("#mobile-menu");
-const menuGrid = document.querySelector("#menu-grid");
-const filterButtons = document.querySelectorAll(".filter-btn");
-const scrollProgress = document.querySelector("#scroll-progress");
-const backToTop = document.querySelector("#back-to-top");
-const preloader = document.querySelector("#preloader");
+/* ── DOM ── */
+const nav = document.querySelector("#nav");
+const ham = document.querySelector("#ham");
+const mob = document.querySelector("#mob-menu");
+const mgrid = document.querySelector("#mgrid");
+const prog = document.querySelector("#prog");
+const btt = document.querySelector("#btt");
+const pl = document.querySelector("#pl");
+const heroEl = document.querySelector("#hero");
 
-/* ── Preloader ─────────────────────────────────────────── */
+/* ── Preloader ── */
 window.addEventListener("load", () => {
-  setTimeout(() => {
-    preloader.classList.add("loaded");
-  }, 800);
+  setTimeout(() => { pl.classList.add("out"); heroEl.classList.add("ready"); }, 900);
 });
 
-/* ── Scroll handlers ───────────────────────────────────── */
-const handleScroll = () => {
-  // Navbar state
-  navbar.classList.toggle("scrolled", window.scrollY > 24);
+/* ── Scroll ── */
+window.addEventListener("scroll", () => {
+  const sy = window.scrollY;
+  const dh = document.documentElement.scrollHeight - window.innerHeight;
+  nav.classList.toggle("scrolled", sy > 30);
+  prog.style.width = ((sy / dh) * 100) + "%";
+  btt.classList.toggle("on", sy > 600);
+}, { passive: true });
 
-  // Scroll progress
-  const scrollTop = window.scrollY;
-  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-  const scrollPercent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-  scrollProgress.style.width = scrollPercent + "%";
-
-  // Back to top visibility
-  backToTop.classList.toggle("visible", window.scrollY > 500);
-};
-
-window.addEventListener("scroll", handleScroll, { passive: true });
-handleScroll();
-
-/* ── Back to top ───────────────────────────────────────── */
-backToTop.addEventListener("click", () => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
+/* ── Mobile nav ── */
+ham.addEventListener("click", () => {
+  const open = ham.classList.toggle("open");
+  mob.classList.toggle("open", open);
+  document.body.style.overflow = open ? "hidden" : "";
 });
-
-/* ── Mobile menu ───────────────────────────────────────── */
-const closeMobileMenu = () => {
-  mobileMenu.classList.add("hidden");
-  menuToggle.classList.remove("open");
-  menuToggle.setAttribute("aria-expanded", "false");
-};
-
-menuToggle.addEventListener("click", () => {
-  const isOpen = mobileMenu.classList.toggle("hidden") === false;
-  menuToggle.classList.toggle("open", isOpen);
-  menuToggle.setAttribute("aria-expanded", String(isOpen));
-});
-
-mobileMenu.querySelectorAll("a").forEach((link) => {
-  link.addEventListener("click", closeMobileMenu);
-});
-
-/* ── Menu rendering with smooth transition ─────────────── */
-const renderMenu = (category) => {
-  const items = menuItems[category] ?? menuItems.starters;
-
-  // Fade out existing cards
-  menuGrid.style.opacity = "0";
-  menuGrid.style.transform = "translateY(12px)";
-
-  setTimeout(() => {
-    menuGrid.innerHTML = items
-      .map(
-        (item, index) => `
-        <article class="menu-card" data-reveal style="transition-delay: ${index * 55}ms">
-          <div class="relative z-10 flex items-start justify-between gap-4">
-            <h3>${item.name}</h3>
-            <span class="menu-price">${item.price}</span>
-          </div>
-          <p class="relative z-10">${item.description}</p>
-        </article>
-      `
-      )
-      .join("");
-
-    observeRevealItems();
-
-    // Fade in
-    requestAnimationFrame(() => {
-      menuGrid.style.transition = "opacity 400ms ease, transform 400ms ease";
-      menuGrid.style.opacity = "1";
-      menuGrid.style.transform = "translateY(0)";
-    });
-  }, 200);
-};
-
-/* ── Intersection Observer for reveal animations ───────── */
-const revealObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("is-visible");
-        revealObserver.unobserve(entry.target);
-      }
-    });
-  },
-  {
-    rootMargin: "0px 0px -80px 0px",
-    threshold: 0.1,
-  }
-);
-
-const observeRevealItems = () => {
-  const revealItems = document.querySelectorAll("[data-reveal]:not(.is-observed)");
-  revealItems.forEach((item) => {
-    item.classList.add("is-observed");
-    revealObserver.observe(item);
-  });
-};
-
-/* ── Filter buttons ────────────────────────────────────── */
-filterButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    filterButtons.forEach((item) => item.classList.remove("active"));
-    button.classList.add("active");
-    renderMenu(button.dataset.category);
+mob.querySelectorAll("a").forEach(a => {
+  a.addEventListener("click", () => {
+    ham.classList.remove("open");
+    mob.classList.remove("open");
+    document.body.style.overflow = "";
   });
 });
 
-/* ── Init ──────────────────────────────────────────────── */
-document.querySelector("#year").textContent = new Date().getFullYear();
-renderMenu("starters");
-observeRevealItems();
+/* ── Back to top ── */
+btt.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+
+/* ── Reveal ── */
+const ro = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add("on"); ro.unobserve(e.target); } });
+}, { rootMargin: "0px 0px -80px 0px", threshold: 0.1 });
+
+const observe = () => {
+  document.querySelectorAll("[data-r]:not(.watched)").forEach(el => {
+    el.classList.add("watched");
+    ro.observe(el);
+  });
+};
+
+/* ── Menu ── */
+const render = (cat) => {
+  mgrid.classList.add("fade");
+  setTimeout(() => {
+    mgrid.innerHTML = (items[cat] || items.starters).map((it, i) => `
+      <article class="mcard" style="transition-delay:${i * 50}ms">
+        <div class="mcard-top">
+          <h3>${it.name}</h3>
+          <span class="mprice">${it.price}</span>
+        </div>
+        <div class="mdivider"></div>
+        <p>${it.desc}</p>
+      </article>
+    `).join("");
+    mgrid.classList.remove("fade");
+    observe();
+  }, 300);
+};
+
+document.querySelectorAll(".ftab").forEach(btn => {
+  btn.addEventListener("click", () => {
+    document.querySelectorAll(".ftab").forEach(b => b.classList.remove("on"));
+    btn.classList.add("on");
+    render(btn.dataset.cat);
+  });
+});
+
+/* ── Init ── */
+document.querySelector("#yr").textContent = new Date().getFullYear();
+render("starters");
+observe();

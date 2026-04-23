@@ -1,386 +1,327 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Rustic House - Cafe, Lounge and Bar in Roorkee. Warm ambience, premium food, handcrafted beverages and a cozy hangout experience."
-    />
-    <title>Rustic House | Cafe, Lounge &amp; Bar in Roorkee</title>
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <meta name="description" content="Rustic House — Cafe, Lounge & Bar in Roorkee. An intimate dining experience with warm ambience, artisan food and handcrafted drinks."/>
+  <title>Rustic House | Cafe, Lounge & Bar — Roorkee</title>
+  <link rel="stylesheet" href="./styles.css"/>
+</head>
+<body>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./styles.css" />
+<!-- Preloader -->
+<div id="pl">
+  <div id="pl-logo">RH</div>
+  <div id="pl-line"></div>
+</div>
 
-    <script>
-      tailwind = {
-        config: {
-          theme: {
-            extend: {
-              colors: {
-                ember: "#f6b73c",
-                bourbon: "#8f4a1a",
-                cocoa: "#22130d",
-                cream: "#fff4dc",
-                copper: "#c77532",
-              },
-              fontFamily: {
-                display: ["Playfair Display", "serif"],
-                body: ["Poppins", "sans-serif"],
-              },
-              boxShadow: {
-                glow: "0 0 45px rgba(246, 183, 60, 0.28)",
-                card: "0 24px 70px rgba(20, 10, 5, 0.2)",
-              },
-            },
-          },
-        },
-      };
-    </script>
-    <script src="https://cdn.tailwindcss.com"></script>
-  </head>
+<!-- Progress -->
+<div id="prog"></div>
 
-  <body class="bg-[#150c08] font-body text-cream antialiased">
-    <!-- Preloader -->
-    <div class="preloader" id="preloader">
-      <div class="preloader-logo">RH</div>
-      <div class="preloader-bar"></div>
+<!-- Nav -->
+<header id="nav">
+  <div class="nav-inner">
+    <a href="#hero" class="nav-logo">
+      RUSTIC HOUSE
+      <small>Cafe · Lounge · Bar</small>
+    </a>
+    <nav class="nav-links">
+      <a href="#hero">Home</a>
+      <a href="#about">About</a>
+      <a href="#menu">Menu</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a href="#contact" class="nav-cta">Reserve</a>
+    <button class="hamburger" id="ham" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile menu -->
+<div id="mob-menu">
+  <a href="#hero">Home</a>
+  <a href="#about">About</a>
+  <a href="#menu">Menu</a>
+  <a href="#gallery">Gallery</a>
+  <a href="#contact">Contact</a>
+</div>
+
+<!-- ═══ HERO ═══ -->
+<section id="hero">
+  <div id="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-overlay2"></div>
+  <div class="hero-content">
+    <div data-r>
+      <div class="hero-badge">Roorkee's finest</div>
+      <h1 class="hero-h1">
+        Where Every<br>
+        <em>Meal Becomes</em><br>
+        a Memory
+      </h1>
+      <p class="hero-desc">An intimate cafe, lounge and bar in the heart of Roorkee — crafted for slow evenings, bold flavours and conversations that linger.</p>
+      <div class="hero-btns">
+        <a href="#menu" class="btn btn-gold">Explore Menu</a>
+        <a href="#contact" class="btn btn-outline">Reserve a Table</a>
+      </div>
     </div>
-
-    <!-- Scroll Progress -->
-    <div id="scroll-progress"></div>
-
-    <header id="navbar" class="fixed inset-x-0 top-0 z-50 transition-all duration-300">
-      <nav class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-8">
-        <a href="#home" class="group flex items-center gap-3" aria-label="Rustic House home">
-          <span class="logo-mark">RH</span>
-          <span class="leading-none">
-            <span class="block font-display text-xl font-bold tracking-wide text-white">Rustic House</span>
-            <span class="block text-[0.62rem] font-semibold uppercase tracking-[0.35em] text-ember">Cafe Lounge Bar</span>
-          </span>
-        </a>
-
-        <div class="hidden items-center gap-8 lg:flex">
-          <a class="nav-link" href="#home">Home</a>
-          <a class="nav-link" href="#about">About</a>
-          <a class="nav-link" href="#menu">Menu</a>
-          <a class="nav-link" href="#gallery">Gallery</a>
-          <a class="nav-link" href="#contact">Contact</a>
+    <aside class="hero-card" data-r data-d="2">
+      <img src="./public/images/rustic-exterior.jpg" alt="Rustic House exterior" class="hero-card-img"/>
+      <div class="hero-stats">
+        <div class="hstat">
+          <strong>4.8</strong>
+          <span>Rated</span>
         </div>
-
-        <a class="hidden rounded-full border border-ember/40 px-5 py-2 text-sm font-semibold text-ember transition hover:bg-ember hover:text-cocoa lg:inline-flex" href="#contact">
-          Reserve Now
-        </a>
-
-        <button id="menu-toggle" class="mobile-toggle lg:hidden" aria-label="Open navigation" aria-expanded="false">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </nav>
-
-      <div id="mobile-menu" class="mobile-menu mx-5 hidden rounded-3xl border border-white/10 bg-[#1f110b]/90 p-5 shadow-card backdrop-blur-2xl lg:hidden">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#menu">Menu</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#contact">Contact</a>
+        <div class="hstat">
+          <strong>12–11</strong>
+          <span>Open daily</span>
+        </div>
+        <div class="hstat">
+          <strong>5+</strong>
+          <span>Years</span>
+        </div>
       </div>
-    </header>
+    </aside>
+  </div>
+  <div class="hero-scroll">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
 
-    <main>
-      <!-- ═══════ HERO ═══════ -->
-      <section id="home" class="hero relative flex min-h-screen items-center overflow-hidden">
-        <img src="./public/images/rustic-interior-wide.jpg" alt="Warm Rustic House interior with wooden ceiling and hanging lights" class="absolute inset-0 h-full w-full object-cover" />
-        <!-- Stronger dark overlay for text visibility -->
-        <div class="absolute inset-0 bg-gradient-to-r from-[#0a0503]/98 via-[#1a0a04]/85 to-[#3a1d0a]/40"></div>
-        <!-- Bottom vignette for extra depth -->
-        <div class="absolute inset-0 bg-gradient-to-t from-[#150c08] via-transparent to-transparent opacity-70"></div>
-        <div class="absolute inset-0 hero-warmth"></div>
-
-        <div class="relative z-10 mx-auto grid max-w-7xl gap-12 px-5 pb-20 pt-36 sm:px-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:pt-28">
-          <div class="max-w-3xl" data-reveal>
-            <p class="mb-5 inline-flex rounded-full border border-ember/35 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.35em] text-ember backdrop-blur">
-              Roorkee's cozy cafe, lounge &amp; bar
-            </p>
-            <h1 class="font-display text-5xl font-extrabold leading-[1.02] text-white sm:text-6xl lg:text-7xl drop-shadow-lg">
-              Experience Rustic Vibes Like Never Before
-            </h1>
-            <p class="mt-6 max-w-2xl text-lg leading-8 text-[rgba(255,244,220,0.90)] sm:text-xl">
-              Cafe • Lounge • Bar in Roorkee, crafted for long conversations, golden lighting, smoky bites and evenings that feel unhurried.
-            </p>
-            <div class="mt-9 flex flex-col gap-4 sm:flex-row">
-              <a href="#menu" class="btn-primary">View Menu</a>
-              <a href="#contact" class="btn-secondary">Reserve Table</a>
-            </div>
-          </div>
-
-          <aside class="hero-card hidden rounded-[2rem] border border-white/15 bg-white/10 p-6 shadow-card backdrop-blur-xl lg:block" data-reveal>
-            <div class="overflow-hidden rounded-[1.5rem]">
-              <img src="./public/images/rustic-exterior.jpg" alt="Rustic House exterior facade in Roorkee" class="h-72 w-full object-cover transition duration-700 hover:scale-105" />
-            </div>
-            <div class="mt-6 grid grid-cols-3 gap-3 text-center">
-              <div class="stat-pill">
-                <span>4.8</span>
-                <small>Guest Love</small>
-              </div>
-              <div class="stat-pill">
-                <span>12 PM</span>
-                <small>Opening</small>
-              </div>
-              <div class="stat-pill">
-                <span>RH</span>
-                <small>Signature</small>
-              </div>
-            </div>
-          </aside>
+<!-- ═══ ABOUT ═══ -->
+<section id="about" class="section">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="about-img-wrap" data-r>
+        <img src="./public/images/rustic-interior.jpg" alt="Rustic House interior" class="about-img-main"/>
+        <div class="about-img-badge">
+          <strong>RH</strong>
+          <span>Since 2019 · Roorkee</span>
         </div>
-      </section>
-
-      <!-- ═══════ ABOUT ═══════ -->
-      <section id="about" class="section-pad wood-panel">
-        <div class="mx-auto grid max-w-7xl items-center gap-12 px-5 sm:px-8 lg:grid-cols-2">
-          <div class="relative" data-reveal>
-            <div class="image-frame">
-              <img src="./public/images/rustic-interior.jpg" alt="Rustic House seating area and lounge bar ambience" class="h-full w-full object-cover" />
-            </div>
-            <div class="floating-badge">
-              <span class="font-display text-4xl text-ember">RH</span>
-              <p>Warm lights. Wooden textures. Real Roorkee evenings.</p>
-            </div>
-          </div>
-
-          <div data-reveal>
-            <p class="eyebrow">About Rustic House</p>
-            <h2 class="section-title">A cafe with the soul of a wooden lodge and the ease of a modern lounge.</h2>
-            <p class="mt-6 text-base leading-8 text-[rgba(255,244,220,0.85)]">
-              Rustic House blends warm wood, soft amber lighting, comfortable seating and a relaxed bar-side energy. It is designed for coffee dates, group celebrations, casual work breaks and late evening hangouts with great food, music and drinks.
-            </p>
-            <div class="mt-8 grid gap-4 sm:grid-cols-2">
-              <div class="mini-card">
-                <span>01</span>
-                <h3>Golden ambience</h3>
-                <p>Cozy corners, soft lighting and a premium rustic interior.</p>
-              </div>
-              <div class="mini-card">
-                <span>02</span>
-                <h3>All-day mood</h3>
-                <p>Perfect for lunch plans, evening bites and night conversations.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ═══════ MENU ═══════ -->
-      <section id="menu" class="section-pad bg-[#1a0f0a]">
-        <div class="mx-auto max-w-7xl px-5 sm:px-8">
-          <div class="mx-auto max-w-3xl text-center" data-reveal>
-            <p class="eyebrow justify-center">Menu Preview</p>
-            <h2 class="section-title">Comfort classics, cafe favorites and bar bites with a premium twist.</h2>
-          </div>
-
-          <div class="mt-10 flex flex-wrap justify-center gap-3" data-reveal>
-            <button class="filter-btn active" data-category="starters">Starters</button>
-            <button class="filter-btn" data-category="main">Main Course</button>
-            <button class="filter-btn" data-category="beverages">Beverages</button>
-          </div>
-
-          <div id="menu-grid" class="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3"></div>
-        </div>
-      </section>
-
-      <!-- ═══════ GALLERY ═══════ -->
-      <section id="gallery" class="section-pad gallery-bg">
-        <div class="mx-auto max-w-7xl px-5 sm:px-8">
-          <div class="flex flex-col justify-between gap-6 md:flex-row md:items-end" data-reveal>
+      </div>
+      <div data-r data-d="1">
+        <p class="eyebrow">Our Story</p>
+        <h2 class="display">A place that <em>feels</em> like home — only better.</h2>
+        <p class="sub" style="margin-top:1.5rem">Rustic House was born from a simple belief: that great food, warm spaces and unhurried evenings create something magical. Nestled in Roorkee, we bring together handcrafted bites, artisan drinks and a rustic-warm atmosphere you won't want to leave.</p>
+        <div class="about-pills">
+          <div class="pill">
+            <span class="pill-num">01</span>
             <div>
-              <p class="eyebrow">Gallery</p>
-              <h2 class="section-title max-w-3xl">Real views from Rustic House: glowing lights, wood finishes and a welcoming street presence.</h2>
-            </div>
-            <a href="#contact" class="text-sm font-semibold uppercase tracking-[0.28em] text-ember transition hover:text-white">Plan a visit</a>
-          </div>
-
-          <div class="mt-10 grid gap-5 md:grid-cols-4 md:grid-rows-2">
-            <figure class="gallery-card md:col-span-2 md:row-span-2" data-reveal>
-              <img src="./public/images/rustic-interior-wide.jpg" alt="Rustic House warm interior with hanging lights" />
-              <figcaption>Warm cafe lounge interiors</figcaption>
-            </figure>
-            <figure class="gallery-card md:col-span-2" data-reveal>
-              <img src="./public/images/rustic-exterior-wide.jpg" alt="Rustic House exterior and signage" />
-              <figcaption>Premium facade in Roorkee</figcaption>
-            </figure>
-            <figure class="gallery-card" data-reveal>
-              <img src="./public/images/rustic-interior.jpg" alt="Rustic House bar seating" />
-              <figcaption>Bar-side seating</figcaption>
-            </figure>
-            <figure class="gallery-card" data-reveal>
-              <img src="./public/images/rustic-exterior.jpg" alt="Rustic House signage and entrance" />
-              <figcaption>Signature RH glow</figcaption>
-            </figure>
-          </div>
-        </div>
-      </section>
-
-      <!-- ═══════ WHY CHOOSE US ═══════ -->
-      <section class="section-pad bg-[#140b07]">
-        <div class="mx-auto max-w-7xl px-5 sm:px-8">
-          <div class="mx-auto max-w-3xl text-center" data-reveal>
-            <p class="eyebrow justify-center">Why Choose Us</p>
-            <h2 class="section-title">Everything you want from a cafe, lounge and bar in one warm address.</h2>
-          </div>
-
-          <div class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            <article class="feature-card" data-reveal>
-              <span class="feature-icon">✦</span>
-              <h3>Cozy Ambience</h3>
-              <p>Wood textures, glowing bulbs and seating that makes every table feel intimate.</p>
-            </article>
-            <article class="feature-card" data-reveal>
-              <span class="feature-icon">◎</span>
-              <h3>Premium Food</h3>
-              <p>Fresh starters, rich mains and shareable plates made for casual indulgence.</p>
-            </article>
-            <article class="feature-card" data-reveal>
-              <span class="feature-icon">⌁</span>
-              <h3>Perfect Hangout Spot</h3>
-              <p>Easy-going enough for friends, polished enough for dates and celebrations.</p>
-            </article>
-            <article class="feature-card" data-reveal>
-              <span class="feature-icon">♬</span>
-              <h3>Great Music &amp; Drinks</h3>
-              <p>A lounge mood with refreshing mocktails, coolers, coffee and bar-style favorites.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <!-- ═══════ TESTIMONIALS ═══════ -->
-      <section class="section-pad testimonials-bg">
-        <div class="mx-auto max-w-7xl px-5 sm:px-8">
-          <div class="max-w-3xl" data-reveal>
-            <p class="eyebrow">Guest Reviews</p>
-            <h2 class="section-title">The kind of place people keep recommending.</h2>
-          </div>
-
-          <div class="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-            <article class="review-card" data-reveal>
-              <div class="review-stars">★★★★★</div>
-              <p>"Loved the wooden interiors and warm lighting. Perfect place for evening coffee and photos."</p>
-              <h3>Ritika S.</h3>
-              <span>Local guest</span>
-            </article>
-            <article class="review-card" data-reveal>
-              <div class="review-stars">★★★★★</div>
-              <p>"Their starters are genuinely good and the lounge side has a relaxed premium feel."</p>
-              <h3>Arjun M.</h3>
-              <span>Weekend visitor</span>
-            </article>
-            <article class="review-card" data-reveal>
-              <div class="review-stars">★★★★☆</div>
-              <p>"A rare Roorkee spot that works for family dinner and friends night out equally well."</p>
-              <h3>Neha K.</h3>
-              <span>Food lover</span>
-            </article>
-            <article class="review-card" data-reveal>
-              <div class="review-stars">★★★★★</div>
-              <p>"Great music, helpful staff and a cozy bar vibe without feeling too crowded."</p>
-              <h3>Kunal R.</h3>
-              <span>Regular guest</span>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <!-- ═══════ CONTACT ═══════ -->
-      <section id="contact" class="section-pad bg-[#1b0f09]">
-        <div class="mx-auto grid max-w-7xl gap-10 px-5 sm:px-8 lg:grid-cols-[0.9fr_1.1fr]">
-          <div data-reveal>
-            <p class="eyebrow">Contact &amp; Reservations</p>
-            <h2 class="section-title">Reserve a table or drop in for a warm Rustic House evening.</h2>
-            <div class="mt-8 space-y-4">
-              <div class="contact-row">
-                <span>Address</span>
-                <p>Rustic House, Roorkee, Uttarakhand</p>
-              </div>
-              <div class="contact-row">
-                <span>Phone</span>
-                <p>+91 98765 43210</p>
-              </div>
-              <div class="contact-row">
-                <span>Opening Hours</span>
-                <p>Monday - Sunday: 12:00 PM - 11:30 PM</p>
-              </div>
-            </div>
-            <div class="mt-8 flex flex-col gap-4 sm:flex-row">
-              <a href="tel:+919876543210" class="btn-primary">Call Now</a>
-              <a href="https://wa.me/919876543210" class="btn-secondary" target="_blank" rel="noreferrer">WhatsApp</a>
+              <h4>Warm Ambience</h4>
+              <p>Wooden textures, amber lighting and cosy corners designed for intimate moments.</p>
             </div>
           </div>
-
-          <div class="map-card" data-reveal>
-            <iframe
-              title="Rustic House Roorkee map"
-              src="https://www.google.com/maps?q=Rustic%20House%20Roorkee&output=embed"
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-            ></iframe>
+          <div class="pill">
+            <span class="pill-num">02</span>
+            <div>
+              <h4>Artisan Kitchen</h4>
+              <p>Fresh, seasonal ingredients transformed into dishes that delight every palate.</p>
+            </div>
+          </div>
+          <div class="pill">
+            <span class="pill-num">03</span>
+            <div>
+              <h4>All-Day Lounge</h4>
+              <p>From morning coffee to midnight mocktails — we have a mood for every hour.</p>
+            </div>
           </div>
         </div>
-      </section>
-    </main>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <footer class="border-t border-white/10 bg-[#100805] px-5 py-10 sm:px-8">
-      <div class="mx-auto grid max-w-7xl gap-8 md:grid-cols-[1.2fr_0.8fr_0.8fr]">
-        <div>
-          <a href="#home" class="flex items-center gap-3">
-            <span class="logo-mark">RH</span>
-            <span>
-              <span class="block font-display text-xl font-bold text-white">Rustic House</span>
-              <span class="block text-xs uppercase tracking-[0.3em] text-ember">Cafe Lounge Bar</span>
-            </span>
+<!-- ═══ MENU ═══ -->
+<section id="menu" class="section">
+  <div class="wrap">
+    <div class="menu-header" data-r>
+      <p class="eyebrow center">Our Menu</p>
+      <h2 class="display">Crafted with <em>passion</em>,<br>plated with care.</h2>
+    </div>
+    <div class="filter-row" data-r data-d="1">
+      <button class="ftab on" data-cat="starters">Starters</button>
+      <button class="ftab" data-cat="main">Main Course</button>
+      <button class="ftab" data-cat="beverages">Beverages</button>
+    </div>
+    <div id="mgrid"></div>
+  </div>
+</section>
+
+<!-- ═══ GALLERY ═══ -->
+<section id="gallery" class="section">
+  <div class="wrap">
+    <div class="gal-header" data-r>
+      <div>
+        <p class="eyebrow">Gallery</p>
+        <h2 class="display" style="font-size:clamp(2rem,4vw,3.5rem)">Inside <em>Rustic House</em></h2>
+      </div>
+      <a href="#contact" class="gal-link">Plan your visit →</a>
+    </div>
+    <div class="gal-grid" data-r data-d="1">
+      <figure class="gcard g1">
+        <img src="./public/images/rustic-interior-wide.jpg" alt="Warm cafe interior"/>
+        <figcaption>Lounge Interiors</figcaption>
+      </figure>
+      <figure class="gcard g2">
+        <img src="./public/images/rustic-exterior-wide.jpg" alt="Rustic House facade"/>
+        <figcaption>Street Presence</figcaption>
+      </figure>
+      <figure class="gcard g3">
+        <img src="./public/images/rustic-interior.jpg" alt="Bar seating"/>
+        <figcaption>Bar Side</figcaption>
+      </figure>
+      <figure class="gcard g4">
+        <img src="./public/images/rustic-exterior.jpg" alt="Entrance"/>
+        <figcaption>Entrance</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ WHY US ═══ -->
+<section id="why" class="section">
+  <div class="wrap">
+    <div style="text-align:center;max-width:42ch;margin:0 auto" data-r>
+      <p class="eyebrow center">Why Rustic House</p>
+      <h2 class="display">An experience <em>beyond</em> the plate.</h2>
+    </div>
+    <div class="why-grid">
+      <div class="wcard" data-r>
+        <span class="wicon">🕯</span>
+        <h3>Intimate Ambience</h3>
+        <p>Warm wood, gentle light and seating designed to make every guest feel at home.</p>
+      </div>
+      <div class="wcard" data-r data-d="1">
+        <span class="wicon">🍽</span>
+        <h3>Artisan Cuisine</h3>
+        <p>Every dish is thoughtfully composed — from smoky starters to rich, hearty mains.</p>
+      </div>
+      <div class="wcard" data-r data-d="2">
+        <span class="wicon">🥂</span>
+        <h3>Lounge Mood</h3>
+        <p>Curated drinks, great music and a vibe that moves from relaxed to celebratory.</p>
+      </div>
+      <div class="wcard" data-r data-d="3">
+        <span class="wicon">⭐</span>
+        <h3>Roorkee's Favourite</h3>
+        <p>Consistently rated 4.8 — the go-to spot for dates, gatherings and celebrations.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ REVIEWS ═══ -->
+<section id="reviews" class="section">
+  <div class="rev-bg"></div>
+  <div class="wrap" style="position:relative;z-index:1">
+    <div style="text-align:center;max-width:40ch;margin:0 auto" data-r>
+      <p class="eyebrow center">Guest Reviews</p>
+      <h2 class="display">Stories from our <em>table</em>.</h2>
+    </div>
+    <div class="rev-grid">
+      <div class="rcard" data-r>
+        <div class="rstars">★★★★★</div>
+        <blockquote>"Loved the wooden interiors and warm lighting. Perfect place for evening coffee — we stayed for three hours without noticing."</blockquote>
+        <cite>Ritika S. <small>Local Guest</small></cite>
+      </div>
+      <div class="rcard" data-r data-d="1">
+        <div class="rstars">★★★★★</div>
+        <blockquote>"Their starters are genuinely exceptional and the lounge has a relaxed, premium feel that's hard to find in Roorkee."</blockquote>
+        <cite>Arjun M. <small>Weekend Visitor</small></cite>
+      </div>
+      <div class="rcard" data-r data-d="2">
+        <div class="rstars">★★★★☆</div>
+        <blockquote>"A rare spot that works equally well for a family dinner and a friends night out. The food never disappoints."</blockquote>
+        <cite>Neha K. <small>Food Lover</small></cite>
+      </div>
+      <div class="rcard" data-r data-d="3">
+        <div class="rstars">★★★★★</div>
+        <blockquote>"Great music, warm staff and a cozy bar vibe. We've already been back twice since our first visit."</blockquote>
+        <cite>Kunal R. <small>Regular Guest</small></cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CONTACT ═══ -->
+<section id="contact" class="section">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div data-r>
+        <p class="eyebrow">Find Us</p>
+        <h2 class="display" style="font-size:clamp(2rem,4vw,3.8rem)">Come, <em>sit with us</em> a while.</h2>
+        <div class="cinfo">
+          <div class="crow">
+            <label>Address</label>
+            <p>Rustic House, Roorkee, Uttarakhand</p>
+          </div>
+          <div class="crow">
+            <label>Phone</label>
+            <p>+91 98765 43210</p>
+          </div>
+          <div class="crow">
+            <label>Hours</label>
+            <p>Daily · 12:00 PM – 11:30 PM</p>
+          </div>
+        </div>
+        <div class="cbtns">
+          <a href="tel:+919876543210" class="btn btn-gold">Call Now</a>
+          <a href="https://wa.me/919876543210" target="_blank" rel="noreferrer" class="btn btn-outline">WhatsApp</a>
+        </div>
+      </div>
+      <div class="map-wrap" data-r data-d="1">
+        <iframe title="Rustic House map" src="https://www.google.com/maps?q=Rustic+House+Roorkee&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="flogo">RUSTIC HOUSE <small>Cafe · Lounge · Bar</small></div>
+        <p class="fdesc">An intimate dining experience in the heart of Roorkee — where every evening feels like a celebration.</p>
+        <div class="socials">
+          <a href="#" class="soc" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".5" fill="currentColor"/></svg>
           </a>
-          <p class="mt-4 max-w-md text-sm leading-7 text-[rgba(255,244,220,0.72)]">
-            A warm, rustic-luxury cafe, lounge and bar experience in Roorkee.
-          </p>
-        </div>
-        <div>
-          <h3 class="footer-title">Quick Links</h3>
-          <div class="mt-4 grid gap-2 text-sm text-[rgba(255,244,220,0.72)]">
-            <a href="#about">About</a>
-            <a href="#menu">Menu</a>
-            <a href="#gallery">Gallery</a>
-            <a href="#contact">Contact</a>
-          </div>
-        </div>
-        <div>
-          <h3 class="footer-title">Social</h3>
-          <div class="mt-4 flex gap-3">
-            <a class="social-link" href="#" aria-label="Instagram">
-              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Z" stroke="currentColor" stroke-width="1.7"/><path d="M16.5 7.5h.01M12 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
-            </a>
-            <a class="social-link" href="#" aria-label="Facebook">
-              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M14 8h3V4h-3c-3 0-5 2-5 5v3H6v4h3v6h4v-6h3.5l.5-4h-4V9c0-.6.4-1 1-1Z" fill="currentColor"/></svg>
-            </a>
-            <a class="social-link" href="#" aria-label="Location">
-              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 22s7-5.1 7-12a7 7 0 1 0-14 0c0 6.9 7 12 7 12Z" stroke="currentColor" stroke-width="1.7"/><path d="M12 12.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z" stroke="currentColor" stroke-width="1.7"/></svg>
-            </a>
-          </div>
+          <a href="#" class="soc" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
         </div>
       </div>
-      <div class="mx-auto mt-8 max-w-7xl border-t border-white/10 pt-6 text-sm text-[rgba(255,244,220,0.58)]">
-        © <span id="year"></span> Rustic House, Roorkee. All rights reserved.
+      <div>
+        <div class="ftitle">Navigate</div>
+        <div class="flinks">
+          <a href="#about">About</a>
+          <a href="#menu">Menu</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#contact">Contact & Reservations</a>
+        </div>
       </div>
-    </footer>
+      <div>
+        <div class="ftitle">Visit Us</div>
+        <div class="flinks">
+          <a href="#">Roorkee, Uttarakhand</a>
+          <a href="tel:+919876543210">+91 98765 43210</a>
+          <a href="#">Mon–Sun · 12 PM – 11:30 PM</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bar">
+      <span>© <span id="yr"></span> Rustic House, Roorkee. All rights reserved.</span>
+      <span>Crafted with ♥ in Roorkee</span>
+    </div>
+  </div>
+</footer>
 
-    <!-- Back to Top Button -->
-    <button id="back-to-top" aria-label="Back to top">↑</button>
+<button id="btt" aria-label="Back to top">↑</button>
 
-    <script src="./script.js"></script>
-  </body>
+<script src="./script.js"></script>
+</body>
 </html>
