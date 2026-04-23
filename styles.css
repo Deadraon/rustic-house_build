@@ -349,11 +349,29 @@ footer{background:var(--char);border-top:1px solid var(--border2);padding:4rem 0
   .why-grid{grid-template-columns:1fr}
   .section{padding:5rem 0}
   .foot-grid{grid-template-columns:1fr}
+
+  /* Mobile navbar */
+  .nav-inner{padding:0 1.25rem}
+  .nav-logo{font-size:1.15rem;letter-spacing:.12em}
+  .nav-logo small{font-size:.45rem;letter-spacing:.4em}
+
+  /* Hero fixes */
+  .hero-content{padding:6rem 1.5rem 4rem;grid-template-columns:1fr;gap:2rem}
+  .hero-h1{font-size:clamp(2.8rem,10vw,4rem);line-height:1.05}
+  .hero-h1 em{display:inline}
+  .hero-btns{flex-direction:column;gap:.75rem;margin-top:2rem}
+  .hero-btns .btn{width:100%;justify-content:center}
+
+  /* Hide scroll indicator on mobile - prevents overlap with buttons */
+  .hero-scroll{display:none}
 }
+
 @media(max-width:480px){
-  .hero-h1{font-size:3rem}
-  .display{font-size:2.4rem}
+  .hero-h1{font-size:clamp(2.4rem,9vw,3rem)}
+  .display{font-size:2.2rem}
   .gal-grid{grid-template-columns:1fr}
   .g1,.g2,.g3,.g4{aspect-ratio:16/9}
-  .hero-btns{flex-direction:column}
+  .wrap{padding:0 1.25rem}
+  .section{padding:4rem 0}
+  .foot-bar{flex-direction:column;gap:.75rem;text-align:center}
 }
